@@ -52,7 +52,7 @@ python server.py
 
 ### Akun demonstrasi
 
-Kata sandi semua akun: `demo123`.
+Kata sandi semua akun: `Dikbud123`.
 
 | Peran | Email |
 |---|---|

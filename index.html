@@ -36,9 +36,8 @@
             <p id="login-error" class="form-error" role="alert"></p>
             <button class="button button-primary login-button" type="submit">Masuk ke dashboard <span>→</span></button>
           </form>
-          <details class="demo-access"><summary>Akses demo untuk pratinjau</summary><p>Gunakan <strong>kepala@ruangmutu.id</strong> dan kata sandi <strong>demo123</strong>.</p><button id="fill-demo" class="text-button" type="button">Isi akun demo</button></details>
-          <a class="button button-outline template-download-login" href="/download/template" download="Template_Data_Pendidikan_Lombok_Timur_Lengkap_Profil_Sekolah.xlsx"><span class="download-icon">↓</span> Unduh templat data Excel</a>
-        </div>
+          <
+          </div>
       </section>
     </main>
 
@@ -60,10 +59,11 @@
         <div class="sidebar-help"><span class="help-icon">?</span><div><strong>Butuh bantuan?</strong><small>Hubungi tim pengelola</small></div><span class="help-arrow">↗</span></div>
         <div class="user-profile"><div class="avatar" id="user-avatar">KD</div><div class="user-meta"><strong id="user-name">Kepala Dinas</strong><small id="user-role">Kepala Dinas</small></div><button id="logout-button" class="logout-button" aria-label="Keluar" title="Keluar">↪</button></div>
       </aside>
+      <button id="sidebar-backdrop" class="sidebar-backdrop" type="button" aria-label="Tutup navigasi" tabindex="-1"></button>
 
       <section class="main-area">
         <header class="topbar">
-          <button id="mobile-menu" class="icon-button mobile-menu" aria-label="Buka navigasi">☰</button>
+          <button id="mobile-menu" class="icon-button mobile-menu" aria-label="Buka navigasi" aria-expanded="false" aria-controls="sidebar">☰</button>
           <div class="breadcrumbs">Dashboard <span>/</span> <strong>Ringkasan</strong></div>
           <div class="topbar-actions"><div class="live-status"><span class="pulse-dot"></span><span>Data terkini</span><span class="live-separator">·</span><span id="last-updated">—</span></div><button id="refresh-button" class="icon-button refresh-button" title="Perbarui data" aria-label="Perbarui data">↻</button><div class="topbar-divider"></div><button class="top-avatar" title="Profil pengguna" id="top-avatar">KD</button></div>
         </header>

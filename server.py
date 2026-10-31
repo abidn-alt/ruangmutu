@@ -32,6 +32,7 @@ SESSION_SECONDS = 8 * 60 * 60
 DEFAULT_YEAR = 2026
 TREND_CHART_YEARS = range(2025, 2031)
 TEMPLATE_FILENAME = "Template_Data_Pendidikan_Lombok_Timur_Lengkap_Profil_Sekolah.xlsx"
+DEMO_PASSWORD = "Dikbud123"
 SCHEMA = (ROOT / "schema.sql").read_text(encoding="utf-8")
 SEED_LOCK = threading.Lock()
 
@@ -132,7 +133,7 @@ def seed_database(connection: sqlite3.Connection) -> None:
             connection.execute(
                 """INSERT INTO users (name, email, role, district_scope, password_salt, password_hash)
                    VALUES (?, ?, ?, '*', ?, ?)""",
-                (name, email, role, salt.hex(), password_digest("demo123", salt).hex()),
+                (name, email, role, salt.hex(), password_digest(DEMO_PASSWORD, salt).hex()),
             )
     if connection.execute("SELECT COUNT(*) FROM schools").fetchone()[0] == 0:
         seed_schools_and_assessments(connection)
@@ -1278,7 +1279,7 @@ def main() -> None:
         seed_database(connection)
     server = ThreadingHTTPServer((HOST, PORT), APIHandler)
     print(f"Ruang Mutu berjalan di http://{HOST}:{PORT}")
-    print("Akun demo: admin@ruangmutu.id, kepala@ruangmutu.id, kabid@ruangmutu.id, pengawas@ruangmutu.id (kata sandi: demo123)")
+    print(f"Akun demo: admin@ruangmutu.id, kepala@ruangmutu.id, kabid@ruangmutu.id, pengawas@ruangmutu.id (kata sandi: {DEMO_PASSWORD})")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
